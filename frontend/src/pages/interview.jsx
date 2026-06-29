@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import api from "../api";
 import { useNavigate } from "react-router-dom"
 
 function Interview() {
@@ -19,8 +19,8 @@ function Interview() {
       try {
         const token = localStorage.getItem("token");
 
-        const response = await axios.get(
-          `http://127.0.0.1:8000/interviews/${id}`,
+        const response = await api.get(
+          "/interviews/${id}",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -77,8 +77,8 @@ function Interview() {
 
       const token = localStorage.getItem("token");
 
-      const response = await axios.post(
-        `http://127.0.0.1:8000/interviews/${id}/submit`,
+      const response = await api.post(
+        "/interviews/${id}/submit",
         {
           answers: updatedAnswers,
         },

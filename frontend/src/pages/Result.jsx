@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import api from "../api";
 import { useNavigate } from "react-router-dom";
 
 function Result() {
@@ -13,8 +13,8 @@ function Result() {
       try {
         const token = localStorage.getItem("token");
 
-        const response = await axios.get(
-          `http://127.0.0.1:8000/interviews/${id}`,
+        const response = await api.get(
+          "/interviews/${id}",
           {
             headers: {
               Authorization: `Bearer ${token}`,

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../api";
 import { useNavigate } from "react-router-dom";
 
 
@@ -10,8 +10,8 @@ function Login() {
    
 
   async function handleLogin() {
-    const response = await axios.post(
-        "http://127.0.0.1:8000/login",
+    const response = await api.post(
+        "/login",
         {
             email,
             password
@@ -28,8 +28,8 @@ function Login() {
     const token = localStorage.getItem("token");
     console.log(localStorage.getItem("token"));
 
-    const meResponse = await axios.get(
-    "http://127.0.0.1:8000/me",
+    const meResponse = await api.get(
+    "/me",
     {
         headers: {
             Authorization: `Bearer ${token}`
