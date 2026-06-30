@@ -20,7 +20,7 @@ function Interview() {
         const token = localStorage.getItem("token");
 
         const response = await api.get(
-          "/interviews/${id}",
+          `/interviews/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
