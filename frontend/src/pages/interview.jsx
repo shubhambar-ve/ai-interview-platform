@@ -78,7 +78,7 @@ function Interview() {
       const token = localStorage.getItem("token");
 
       const response = await api.post(
-        "/interviews/${id}/submit",
+        `/interviews/${id}/submit`,
         {
           answers: updatedAnswers,
         },
