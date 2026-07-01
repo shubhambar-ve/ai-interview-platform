@@ -2,11 +2,11 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar";
 
-import Landing from "./pages/Landing";
+import Landing from "./pages/landing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Dashboard from "./pages/Dashboard";
-import Interview from "./pages/Interview";
+import Dashboard from "./pages/dashboard";
+import Interview from "./pages/interview";
 import Result from "./pages/Result";
 
 function App() {
