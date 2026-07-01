@@ -1,44 +1,32 @@
-import Navbar from "./components/navbar"
-
-import Dashboard from "./pages/dashboard";
-import Interview from "./pages/interview";
-import Landing from "./pages/landing";
 import { Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+
+import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
+import Interview from "./pages/Interview";
 import Result from "./pages/Result";
 
-
 function App() {
-
-  const title = "AI Interview Platform"
-  const username = "Shubham"
-  const role = "Student"
-
   return (
+    <div className="min-h-screen bg-slate-950">
+      <Navbar />
 
-    <div>
-      <Navbar 
-      title={title} 
-      username={username} 
-      role={role}       
-      
-
-      />
-
-      
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/interview/:id" element={<Interview />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/interview/:id/result" element={<Result/>} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/interview/:id" element={<Interview />} />
+        <Route
+          path="/interview/:id/result"
+          element={<Result />}
+        />
       </Routes>
-      
-    
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
